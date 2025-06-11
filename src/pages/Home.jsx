@@ -9,7 +9,7 @@ import Skills from '../components/Skills';
 import Contact from '../components/Contact';
 import io from 'socket.io-client';
 
-const socket = io('http://localhost:5000');
+const socket = io('http://portfolio-server-9qz2.onrender.com/');
 
 function Home() {
   useEffect(() => {
