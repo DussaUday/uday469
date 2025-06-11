@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': 'https://portfolio-server-9qz2.onrender.com/',
-      '/uploads': 'https://portfolio-server-9qz2.onrender.com/uploads',
+      '/uploads': 'https://portfolio-server-9qz2.onrender.com/uploads/',
     },
   },
 });
