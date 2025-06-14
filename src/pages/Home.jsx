@@ -7,20 +7,8 @@ import Resume from '../components/Resume';
 import Certificates from '../components/Certificates';
 import Skills from '../components/Skills';
 import Contact from '../components/Contact';
-import io from 'socket.io-client';
-
-const socket = io('http://portfolio-server-9qz2.onrender.com/');
-
 function Home() {
-  useEffect(() => {
-    socket.on('projectUpdate', () => {
-      window.location.reload();
-    });
-
-    return () => {
-      socket.off('projectUpdate');
-    };
-  }, []);
+  
 
   return (
     <div className="min-h-screen bg-secondary dark:bg-dark flex flex-col transition-colors duration-300">

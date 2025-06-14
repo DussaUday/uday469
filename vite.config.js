@@ -5,8 +5,12 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': 'https://portfolio-server-9qz2.onrender.com/',
-      '/uploads': 'https://portfolio-server-9qz2.onrender.com/uploads/',
+      '/api': {
+        target: 'https://portfolio-server-9qz2.onrender.com',
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
     },
   },
 });
