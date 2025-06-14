@@ -35,7 +35,14 @@ function Skills() {
         const res = await axios.get('/api/skills');
         setSkills(res.data.length > 0 ? res.data : defaultSkills);
       } catch (error) {
-        console.error('Error fetching skills:', error);
+        console.error('Error fetching skills:', {
+          message: error.message,
+          response: error.response ? {
+            status: error.response.status,
+            data: error.response.data
+          } : null,
+          request: error.request ? error.request : null
+        });
         setSkills(defaultSkills);
       }
     };

@@ -9,7 +9,6 @@ export default defineConfig({
         target: 'https://portfolio-server-9qz2.onrender.com',
         changeOrigin: true,
         secure: false,
-        rewrite: (path) => path.replace(/^\/api/, '')
       }
     },
   },
