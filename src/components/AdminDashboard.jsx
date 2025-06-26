@@ -29,7 +29,7 @@ function AdminDashboard({ setIsAuthenticated }) {
 
   const fetchProjects = async () => {
     try {
-      const res = await axios.get('/api/projects');
+      const res = await axios.get('https://portfolio-server-9qz2.onrender.com/api/projects');
       setProjects(res.data);
     } catch (error) {
       console.error('Error fetching projects:', error);
@@ -38,7 +38,7 @@ function AdminDashboard({ setIsAuthenticated }) {
 
   const fetchCertificates = async () => {
     try {
-      const res = await axios.get('/api/certificates');
+      const res = await axios.get('https://portfolio-server-9qz2.onrender.com/api/certificates');
       setCertificates(res.data);
     } catch (error) {
       console.error('Error fetching certificates:', error);
@@ -47,7 +47,7 @@ function AdminDashboard({ setIsAuthenticated }) {
 
   const fetchSkills = async () => {
     try {
-      const res = await axios.get('/api/skills');
+      const res = await axios.get('https://portfolio-server-9qz2.onrender.com/api/skills');
       setSkills(res.data);
     } catch (error) {
       console.error('Error fetching skills:', error);
@@ -56,7 +56,7 @@ function AdminDashboard({ setIsAuthenticated }) {
 
   const fetchResume = async () => {
     try {
-      const res = await axios.get('/api/resumes');
+      const res = await axios.get('https://portfolio-server-9qz2.onrender.com/api/resumes');
       setResume(res.data);
     } catch (error) {
       console.error('Error fetching resume:', error);
@@ -88,9 +88,9 @@ function AdminDashboard({ setIsAuthenticated }) {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       };
       if (editing) {
-        await axios.put(`/api/projects/${editing}`, data, config);
+        await axios.put(`https://portfolio-server-9qz2.onrender.com/api/projects/${editing}`, data, config);
       } else {
-        await axios.post('/api/projects', data, config);
+        await axios.post('https://portfolio-server-9qz2.onrender.com/api/projects', data, config);
       }
       fetchProjects();
       resetForm();
@@ -112,9 +112,9 @@ function AdminDashboard({ setIsAuthenticated }) {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       };
       if (editing) {
-        await axios.put(`/api/certificates/${editing}`, data, config);
+        await axios.put(`https://portfolio-server-9qz2.onrender.com/api/certificates/${editing}`, data, config);
       } else {
-        await axios.post('/api/certificates', data, config);
+        await axios.post('https://portfolio-server-9qz2.onrender.com/api/certificates', data, config);
       }
       fetchCertificates();
       resetForm();
@@ -135,9 +135,9 @@ function AdminDashboard({ setIsAuthenticated }) {
         icon: formData.icon,
       };
       if (editing) {
-        await axios.put(`/api/skills/${editing}`, skillData, config);
+        await axios.put(`https://portfolio-server-9qz2.onrender.com/api/skills/${editing}`, skillData, config);
       } else {
-        await axios.post('/api/skills', skillData, config);
+        await axios.post('https://portfolio-server-9qz2.onrender.com/api/skills', skillData, config);
       }
       fetchSkills();
       resetForm();
@@ -155,7 +155,7 @@ function AdminDashboard({ setIsAuthenticated }) {
       const config = {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       };
-      await axios.post('/api/resumes', data, config);
+      await axios.post('https://portfolio-server-9qz2.onrender.com/api/resumes', data, config);
       fetchResume();
       resetForm();
     } catch (err) {
@@ -168,7 +168,7 @@ function AdminDashboard({ setIsAuthenticated }) {
       const config = {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       };
-      await axios.delete(`/api/${type}/${id}`, config);
+      await axios.delete(`https://portfolio-server-9qz2.onrender.com/api/${type}/${id}`, config);
       if (type === 'projects') fetchProjects();
       if (type === 'certificates') fetchCertificates();
       if (type === 'skills') fetchSkills();

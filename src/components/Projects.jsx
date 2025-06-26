@@ -8,7 +8,7 @@ function Projects() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await axios.get('/api/projects');
+        const res = await axios.get('https://portfolio-server-9qz2.onrender.com/api/projects');
         setProjects(res.data);
       } catch (error) {
         console.error('Error fetching projects:', error);

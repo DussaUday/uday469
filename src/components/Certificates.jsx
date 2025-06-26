@@ -7,7 +7,7 @@ function Certificates() {
   useEffect(() => {
     const fetchCertificates = async () => {
       try {
-        const res = await axios.get('/api/certificates');
+        const res = await axios.get('https://portfolio-server-9qz2.onrender.com/api/certificates');
         setCertificates(res.data);
       } catch (error) {
         console.error('Error fetching certificates:', error);

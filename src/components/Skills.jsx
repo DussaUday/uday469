@@ -32,7 +32,7 @@ function Skills() {
   useEffect(() => {
     const fetchSkills = async () => {
       try {
-        const res = await axios.get('/api/skills');
+        const res = await axios.get('https://portfolio-server-9qz2.onrender.com/api/skills');
         setSkills(res.data.length > 0 ? res.data : defaultSkills);
       } catch (error) {
         console.error('Error fetching skills:', {

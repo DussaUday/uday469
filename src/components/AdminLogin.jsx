@@ -10,7 +10,7 @@ function AdminLogin({ setIsAuthenticated }) {
     e.preventDefault();
     try {
       console.log('Sending login request:', { username, password });
-      const res = await axios.post('/api/auth/login', { username, password });
+      const res = await axios.post('https://portfolio-server-9qz2.onrender.com/api/auth/login', { username, password });
       console.log('Login response:', res.data);
       localStorage.setItem('token', res.data.token);
       setIsAuthenticated(true);
