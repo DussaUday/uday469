@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { AiOutlineDownload } from 'react-icons/ai';
 import pdf from '../assets/resume.pdf';
-
 function Resume() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
