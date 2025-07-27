@@ -9,7 +9,33 @@
     <link rel="icon" href="./dist/favicon.ico" />
     <link rel="apple-touch-icon" href="./dist/apple-touch-icon.png" />
     <title>Uday's Portfolio</title>
+    <script>
+      tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#00ff88',
+            secondary: '#f0f0f0',
+            dark: '#1a1a26',
+            highlight: '#00cc66',
+            accent: '#00cc66',
+          },
+          animation: {
+            'slide-up': 'slideUp 1s ease-out',
+          },
+          keyframes: {
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: 0 },
+              '100%': { transform: 'translateY(0)', opacity: 1 },
+            },
+          },
+        },
+      },
+    };
+    </script>
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
