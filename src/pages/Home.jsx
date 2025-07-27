@@ -1,20 +1,19 @@
 import { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Hero from '../components/Hero';
 import Profile from '../components/Profile';
 import Projects from '../components/Projects';
 import Resume from '../components/Resume';
 import Certificates from '../components/Certificates';
 import Skills from '../components/Skills';
 import Contact from '../components/Contact';
-
 function Home() {
+  
+
   return (
     <div className="min-h-screen bg-secondary dark:bg-dark flex flex-col transition-colors duration-300">
       <Header />
       <main className="container mx-auto p-6 pt-24 flex-grow">
-        <Hero />
         <h1 className="text-5xl md:text-6xl font-extrabold text-center mb-12 text-dark dark:text-secondary animate-slide-up">
           Dussa Uday Krishna - Computer Science Student
         </h1>
